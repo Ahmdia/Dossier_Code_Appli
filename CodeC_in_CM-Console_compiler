@@ -11,10 +11,10 @@
 // Test setup
 //
 // F2838x Control Card connected to a PC/laptop  on the Ethernet port.
-// PC/laptop runs the SocketTest/’Packet Sender’ software, configured for the IP Address and port . \
-// Keywords ‘START’ and ‘STOP’ are used to send and stop receiving messages respectively
-// Received data is stored in ‘buf_rx’ array and data to be transmitted is stored in ‘buf_tx’ array on CM core of F2838x device
-// Examples is Interrupt based with a callback function ‘udp_rx_callback’ which handles the received data from the SocketTest/Packet Sender software.
+// PC/laptop runs the SocketTest/â€™Packet Senderâ€™ software, configured for the IP Address and port . \
+// Keywords â€˜STARTâ€™ and â€˜STOPâ€™ are used to send and stop receiving messages respectively
+// Received data is stored in â€˜buf_rxâ€™ array and data to be transmitted is stored in â€˜buf_txâ€™ array on CM core of F2838x device
+// Examples is Interrupt based with a callback function â€˜udp_rx_callbackâ€™ which handles the received data from the SocketTest/Packet Sender software.
 //
 //###########################################################################
 // $TI Release: $
@@ -784,7 +784,7 @@ unsigned long IPAddr =  0xC0A80004; // 0xC0A80004; //192.168.0.4
 unsigned long NetMask = 0xFFFFFF00;
 unsigned long GWAddr = 0xC0A8000A;
 
-#define IPC_DATA_SIZE 100 // Taille des donn�es transf�r�es via IPC
+#define IPC_DATA_SIZE 100 // Taille des données transférées via IPC
 #define DATALOAD 500
 uint32_t buf_kx[DATALOAD];
 
@@ -911,7 +911,7 @@ main(void)
                     else if (i - buf_tx_start_msg_count < sizeof(buf_kx)) {
                       buf_tx[i] = buf_kx[i - buf_tx_start_msg_count];
                    } else {
-                   buf_tx[i] = 0; // Valeur par d�faut si les donn�es re�ues sont plus petites que pr�vu
+                   buf_tx[i] = 0; // Valeur par défaut si les données reçues sont plus petites que prévu
                                                                      }
 
                 }
@@ -977,14 +977,4 @@ void lwIPHostTimerHandler(void)
 
     cnt_ms_lwip_Htimer++;
 }
-/*  int j=0;
-                   // Stocker les donn�es dans buf_tx
-                   buf_kx[j]= data;
-                   j++;*/
-                //   memcpy(&buf_kx[j], &addr,sizeof(buf_kx));
-                //   memcpy(&buf_kx, (uint32_t *)&addr, sizeof(buf_kx));
-                /*   for(j=0;j<PAYLOAD;j++)
-                   {
-                       memcpy(&buf_kx, *((uint32_t *)addr+j) , sizeof(data));
-                   }*/
-                  // j++;
+
