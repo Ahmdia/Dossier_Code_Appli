@@ -152,14 +152,7 @@ uint16_t pass;
 
 
 
-//
-//ADC_Interupt
-//
 
-
-//
-// Main
-//
 
 void main(void)
 {
